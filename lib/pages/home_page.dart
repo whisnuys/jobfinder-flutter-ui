@@ -8,8 +8,15 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../widgets/bottom_navbar_item.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  int menuIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -257,9 +264,44 @@ class HomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           // ignore: prefer_const_literals_to_create_immutables
           children: [
-            BottomNav(imageUrl: 'assets/images/home', isActive: true),
-            BottomNav(imageUrl: 'assets/images/savenav', isActive: false),
-            BottomNav(imageUrl: 'assets/images/setting', isActive: false),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  menuIndex = 0;
+                });
+              },
+              icon: menuIndex == 0
+                  ? Image.asset(
+                      'assets/images/home_active.png',
+                      width: 28,
+                    )
+                  : Image.asset(
+                      'assets/images/home.png',
+                      width: 28,
+                    ),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  menuIndex = 1;
+                });
+              },
+              icon: menuIndex == 1
+                  ? Image.asset(
+                      'assets/images/savenav_active.png',
+                    )
+                  : Image.asset('assets/images/savenav.png'),
+            ),
+            IconButton(
+              onPressed: () {
+                setState(() {
+                  menuIndex = 2;
+                });
+              },
+              icon: menuIndex == 2
+                  ? Image.asset('assets/images/setting_active.png')
+                  : Image.asset('assets/images/setting.png'),
+            ),
           ],
         ),
       ),

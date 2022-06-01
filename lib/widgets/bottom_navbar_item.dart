@@ -1,13 +1,13 @@
-// ignore_for_file: use_key_in_widget_constructors
+// ignore_for_file: use_key_in_widget_constructors, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:findjobapp/theme.dart';
 
 class BottomNav extends StatelessWidget {
   final String imageUrl;
-  final bool isActive;
+  final int menuIndex;
 
-  const BottomNav({required this.imageUrl, required this.isActive});
+  const BottomNav({required this.imageUrl, required this.menuIndex});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +15,7 @@ class BottomNav extends StatelessWidget {
       children: [
         Spacer(),
         Image.asset(
-          isActive ? imageUrl + '_active.png' : imageUrl + '.png',
+          menuIndex == 1 ? imageUrl + '_active.png' : imageUrl + '.png',
           width: 30,
           height: 30,
         ),
