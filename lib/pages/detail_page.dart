@@ -216,6 +216,37 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                 ],
               ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  horizontal: 25,
+                  vertical: 30,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Navigator.pop(context);
+                      },
+                      child: Icon(
+                        Icons.chevron_left,
+                        color: Colors.white,
+                        size: 28,
+                      ),
+                    ),
+                    Spacer(),
+                    Text(
+                      'Job Detail',
+                      style: heading3.copyWith(
+                        color: Colors.white,
+                        fontSize: 16,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
