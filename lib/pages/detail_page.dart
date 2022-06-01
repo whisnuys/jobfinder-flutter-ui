@@ -301,6 +301,7 @@ class _DetailPageState extends State<DetailPage> {
                   ),
                   shadowColor: gray5,
                   elevation: 20,
+                  onPrimary: primaryGray,
                 ),
               ),
             ],
