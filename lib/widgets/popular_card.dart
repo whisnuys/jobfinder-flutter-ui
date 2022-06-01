@@ -27,7 +27,7 @@ class popularCard extends StatelessWidget {
       onTap: () {
         Navigator.push(
           context,
-          MaterialPageRoute(builder: (context) => AboutPage()),
+          MaterialPageRoute(builder: (context) => DetailPage()),
         );
       },
       child: Container(

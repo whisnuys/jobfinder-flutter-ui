@@ -4,14 +4,14 @@ import 'package:findjobapp/widgets/job_category.dart';
 import 'package:flutter/material.dart';
 import 'package:findjobapp/theme.dart';
 
-class AboutPage extends StatefulWidget {
-  const AboutPage({Key? key}) : super(key: key);
+class DetailPage extends StatefulWidget {
+  const DetailPage({Key? key}) : super(key: key);
 
   @override
-  State<AboutPage> createState() => _AboutPageState();
+  State<DetailPage> createState() => _DetailPageState();
 }
 
-class _AboutPageState extends State<AboutPage> {
+class _DetailPageState extends State<DetailPage> {
   List requirements = [
     "Bachelor's degree in computer science, business, or a related field",
     "5-8 years of project management and related experience",
