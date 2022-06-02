@@ -3,7 +3,7 @@
 import 'package:findjobapp/theme.dart';
 import 'package:flutter/material.dart';
 
-class AvailJobs extends StatelessWidget {
+class AvailJobs extends StatefulWidget {
   final String logo;
   final String title;
   final String location;
@@ -15,6 +15,13 @@ class AvailJobs extends StatelessWidget {
     required this.location,
     required this.salary,
   });
+
+  @override
+  State<AvailJobs> createState() => _AvailJobsState();
+}
+
+class _AvailJobsState extends State<AvailJobs> {
+  bool isActive = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,15 +42,31 @@ class AvailJobs extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Image.asset(
-                  logo,
+                  widget.logo,
                   width: 41,
                   height: 41,
                 ),
                 Spacer(),
-                Image.asset(
-                  'assets/images/save.png',
-                  width: 12,
-                  height: 16,
+                Material(
+                  color: Colors.transparent,
+                  child: InkWell(
+                    onTap: () {
+                      setState(() {
+                        isActive = !isActive;
+                      });
+                    },
+                    child: isActive == true
+                        ? Image.asset(
+                            'assets/images/saveactive.png',
+                            width: 20,
+                            height: 24,
+                          )
+                        : Image.asset(
+                            'assets/images/save.png',
+                            width: 20,
+                            height: 24,
+                          ),
+                  ),
                 ),
               ],
             ),
@@ -51,21 +74,21 @@ class AvailJobs extends StatelessWidget {
               height: 13,
             ),
             Text(
-              title,
+              widget.title,
               style: heading3,
             ),
             SizedBox(
               height: 4,
             ),
             Text(
-              location,
+              widget.location,
               style: descriptionText,
             ),
             SizedBox(
               height: 10,
             ),
             Text(
-              salary,
+              widget.salary,
               style: descriptionText,
             ),
           ],
