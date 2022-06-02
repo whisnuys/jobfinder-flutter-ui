@@ -289,9 +289,9 @@ class _DetailPageState extends State<DetailPage> {
                 onPressed: () {},
                 child: Center(
                   child: Image.asset(
-                    'assets/images/savenav_active.png',
-                    width: 20,
-                    height: 26,
+                    'assets/images/savenav.png',
+                    width: 30,
+                    height: 46,
                   ),
                 ),
                 style: ElevatedButton.styleFrom(
